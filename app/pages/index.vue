@@ -12,7 +12,7 @@ import CTASection from '../app/components/home/CTASection.vue';
 <template>
   <div>
     <HeroSection />
-    <VisionMissionSection />
+    <!-- <VisionMissionSection /> -->
     <AboutSection />
     <NewsSection />
     <EventsSection />
