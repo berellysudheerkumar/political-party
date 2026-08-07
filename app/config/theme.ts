@@ -169,6 +169,41 @@ export const siteTheme = {
       visionIcon: 'bg-amber-50 text-amber-600',
     },
 
+    contact: {
+      section: {
+        background: 'bg-slate-50',
+        glow: 'bg-blue-600/5',
+      },
+
+      eyebrow: {
+        line: 'bg-blue-700',
+        text: 'text-blue-700',
+      },
+
+      title: {
+        text: 'text-slate-950',
+      },
+
+      description: {
+        text: 'text-slate-600',
+      },
+
+      item: {
+        border: 'border-slate-200',
+
+        icon: {
+          base: 'border border-blue-100 bg-blue-50',
+          text: 'text-blue-700',
+          hover: 'group-hover:border-blue-700 group-hover:bg-blue-700 group-hover:text-white',
+        },
+
+        label: 'text-xs font-bold tracking-[0.2em] text-slate-500',
+
+        title: 'text-lg font-bold text-slate-900',
+
+        value: 'text-sm text-slate-600',
+      },
+    },
     forms: {
       input: {
         background: 'bg-white',
