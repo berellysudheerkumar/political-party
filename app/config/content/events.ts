@@ -32,7 +32,7 @@ export const eventsContent = {
       location: 'Hyderabad',
       description:
         'Meet our representatives and community members to discuss local priorities and development initiatives.',
-      image: '/images/events/community-outreach.webp',
+      image:'https://images.unsplash.com/photo-1505373877841-8d25f7d46678',
       link: '/events/community-outreach',
     },
     {
@@ -43,7 +43,7 @@ export const eventsContent = {
       location: 'Warangal',
       description:
         'An initiative focused on youth leadership, skills development, education, and future opportunities.',
-      image: '/images/events/youth-leadership.webp',
+     image:'https://images.unsplash.com/photo-1511578314322-379afb476865',
       link: '/events/youth-leadership',
     },
     {
@@ -54,7 +54,7 @@ export const eventsContent = {
       location: 'Mahabubnagar',
       description:
         'An opportunity for citizens to interact with party representatives and share their views and concerns.',
-      image: '/images/events/public-meeting.webp',
+      image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee',
       link: '/events/public-meeting',
     },
   ] satisfies PartyEvent[],

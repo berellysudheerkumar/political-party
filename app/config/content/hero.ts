@@ -5,6 +5,18 @@ type HeroContent = {
 
   message: string;
 
+  campaignImages: {
+    primary: {
+      src: string;
+      alt: string;
+    };
+
+    secondary: {
+      src: string;
+      alt: string;
+    };
+  };
+
   leaderImage: {
     src: string;
     alt: string;
@@ -36,6 +48,18 @@ export const heroContent = {
   leaderImage: {
     src: '',
     alt: 'Party Leader',
+  },
+
+    campaignImages: {
+    primary: {
+      src: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30',
+      alt: 'Public rally and community gathering',
+    },
+
+    secondary: {
+      src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac',
+      alt: 'Community volunteers working together',
+    },
   },
 
   primaryButton: {
