@@ -98,7 +98,7 @@ const scroll = (direction: 'left' | 'right') => {
 
     <!-- Centered CTA Button -->
     <div class="relative z-10 mx-auto mt-8 max-w-7xl px-6 text-center lg:px-8">
-      <BaseButton :text="newsContent.button.text" :to="newsContent.button.link" />
+      <BaseButton :text="newsContent.buttons.text" :to="newsContent.buttons.link" />
     </div>
   </section>
 </template>

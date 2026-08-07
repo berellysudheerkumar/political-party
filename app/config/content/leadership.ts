@@ -16,7 +16,7 @@ export const leadershipContent = {
       id: 1,
       name: 'Leader Name',
       designation: 'National President',
-      image: '/images/leadership/president.webp',
+      image:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e',
       shortBio: 'Dedicated to building an inclusive and progressive future.',
     },
 
@@ -24,7 +24,7 @@ export const leadershipContent = {
       id: 2,
       name: 'Leader Name',
       designation: 'Vice President',
-      image: '/images/leadership/vice-president.webp',
+      image:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e',
       shortBio: 'Focused on empowering communities through sustainable development.',
     },
 
@@ -32,7 +32,7 @@ export const leadershipContent = {
       id: 3,
       name: 'Leader Name',
       designation: 'General Secretary',
-      image: '/images/leadership/general-secretary.webp',
+      image:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e',
       shortBio: 'Committed to transparency and effective governance.',
     },
   ],

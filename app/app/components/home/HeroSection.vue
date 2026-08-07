@@ -4,16 +4,6 @@ import { heroContent } from '~/config/content/hero';
 import { siteTheme } from '~/config/theme';
 import BaseButton from '~/app/components/shared/BaseButton.vue';
 
-// Dynamic imagery curated for a political/campaign aesthetic
-const campaignImages = {
-  // Large rally / engaged crowd / inspiring moment
-  primary:
-    'https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?q=80&w=2000&auto=format&fit=crop',
-  // Grassroots / community working together
-  secondary:
-    'https://images.unsplash.com/photo-1593115057322-e94bfa3a4eb1?q=80&w=1000&auto=format&fit=crop',
-};
-
 // Subtle entry animation trigger
 const isLoaded = ref(false);
 
@@ -138,7 +128,7 @@ onMounted(() => {
             class="absolute inset-0 z-10 bg-gradient-to-tr from-slate-950/80 via-slate-900/20 to-transparent mix-blend-multiply"
           />
           <img
-            :src="campaignImages.primary"
+            :src="heroContent.campaignImages.primary.src"
             alt="Campaign Rally"
             class="h-full w-full object-cover transition-transform duration-[10s] ease-out hover:scale-110"
           />
@@ -150,7 +140,7 @@ onMounted(() => {
           :class="isLoaded ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'"
         >
           <img
-            :src="campaignImages.secondary"
+            :src="heroContent.campaignImages.secondary.src"
             alt="Community Action"
             class="h-full w-full object-cover opacity-75 transition-opacity duration-500 group-hover:opacity-100"
           />
