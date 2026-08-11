@@ -1,0 +1,435 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "leadership": "Leadership",
+    "manifesto": "Manifesto",
+    "events": "Events",
+    "news": "News",
+    "contact": "Contact",
+    "more": "More"
+  },
+  "buttons": {
+    "joinUs": "Join Us",
+    "joinMovement": "Join the People's Movement",
+    "aboutGoals": "About Us / Goals"
+  },
+  "branding": {
+    "name": "BCSCST-JAC",
+    "tagline": "Official Website",
+    "shortName": "P",
+    "social": {
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "youtube": "YouTube"
+    }
+  },
+  "heroSection": {
+    "badge": "BC, SC, ST - JAC | Rights & Rajyadhikara Sadhana",
+    "sloganLine1": "To each caste,",
+    "sloganHighlight": "a share proportional to their population!",
+    "leaderSubtitle": "Under the leadership of Dr. Visharadan Maharaj... For a 90% Bahujan rule in Telangana!",
+    "description": "Carrying forward the ideals of Mahatma Jyotirao Phule, Dr. B.R. Ambedkar, and Kanshiram... A militant public platform constantly fighting for social justice, rights, and political power.",
+    "cardTitle": "90% Force",
+    "cardDesc": "Goal is social justice & political power.",
+    "grassrootsTitle": "Grassroots Awakening",
+    "grassrootsDesc": "Unity of the 90% Bahujan force."
+  },
+  "about": {
+    "eyebrow": "About Us",
+    "title": "Our Mission",
+    "description": "We are a political party committed to serving the people, strengthening communities, and creating meaningful opportunities for every citizen through responsible and inclusive governance.",
+
+    "whatDrivesUs": "What Drives Us",
+    "driveText1": "A people-centred commitment to progress",
+    "driveText2": "We believe lasting progress begins by listening to citizens, understanding the needs of every community, and turning those aspirations into responsible action. Our commitment is to work with integrity, accountability, and a clear focus on the public good.",
+
+    "highlights": [
+      {
+        "id": "peopleFirst",
+        "title": "People First",
+        "description": "We put the needs, rights, and aspirations of citizens at the heart of every decision and public initiative."
+      },
+      {
+        "id": "transparentGovernance",
+        "title": "Transparent Governance",
+        "description": "We believe public institutions must be accountable, transparent, and responsive to the people they serve."
+      },
+      {
+        "id": "inclusiveDevelopment",
+        "title": "Inclusive Development",
+        "description": "We work towards equal opportunities and sustainable development so that every community can participate in and benefit from progress."
+      }
+    ],
+
+    "vision": {
+      "eyebrow": "Our Vision",
+      "title": "A Stronger Future for Everyone",
+      "description": "Our vision is to build a society where responsible leadership, inclusive development, and equal opportunity create a better future for every citizen."
+    },
+
+    "mission": {
+      "eyebrow": "Our Mission",
+      "title": "Serving the People, Strengthening Communities",
+      "description": "Our mission is to serve the people, empower communities, and create meaningful opportunities for every citizen through responsible and inclusive governance."
+    },
+
+    "cta": {
+      "title": "Be Part of the Change",
+      "description": "Join us in building stronger communities and a future where every citizen has the opportunity to grow, contribute, and prosper.",
+      "button": "Join Us"
+    },
+
+    "button": {
+      "text": "Learn More",
+      "link": "/about"
+    }
+  },
+  "news": {
+    "eyebrow": "News & Updates",
+    "title": "Latest From Our Movement",
+    "description": "Stay informed about our public initiatives, community programs, local engagements, and ongoing efforts to work for the people and create meaningful change.",
+
+    "buttons": {
+      "featured": "Read Full Story",
+      "card": "Read More",
+      "close": "Close Article",
+      "text": "View All News",
+      "link": "/news"
+    },
+
+    "articles": {
+      "publicServiceCenters": {
+        "category": "Public Service",
+        "title": "New Public Service Centers Launched Across Constituencies",
+        "date": "August 7, 2026",
+        "description": "New public service centers are being established to help citizens access information, guidance, and support for essential services.",
+        "content": "The new public service centers are designed to make essential information and support more accessible to citizens. The initiative focuses on listening to public needs, improving access to services, and helping communities connect with the assistance they require."
+      },
+
+      "communityMeetings": {
+        "category": "Public Outreach",
+        "title": "Listening to Citizens Through Local Community Meetings",
+        "date": "July 28, 2026",
+        "description": "Local community meetings are bringing citizens and representatives together to understand concerns, priorities, and development needs.",
+        "content": "Community meetings provide an opportunity for residents to openly share their concerns and ideas. Our representatives are engaging directly with citizens to better understand local priorities and work towards responsible and practical solutions."
+      },
+
+      "youthLeadership": {
+        "category": "Youth Development",
+        "title": "Youth Leadership Program Encourages Community Participation",
+        "date": "July 15, 2026",
+        "description": "A youth leadership initiative is encouraging young people to take an active role in community development and public participation.",
+        "content": "Young people have an important role to play in shaping the future of their communities. This initiative aims to encourage leadership, civic participation, and constructive engagement among the next generation."
+      },
+
+      "greenDrive": {
+        "category": "Environment",
+        "title": "Community Green Drive Promotes Sustainable Living",
+        "date": "June 30, 2026",
+        "description": "Citizens and volunteers came together for environmental awareness activities promoting cleaner and more sustainable communities.",
+        "content": "The community green drive brought volunteers and residents together to raise awareness about environmental responsibility. The initiative encourages communities to adopt sustainable practices and take collective responsibility for protecting our surroundings."
+      },
+
+      "volunteerNetwork": {
+        "category": "Community Initiative",
+        "title": "Volunteer Network Expands Across Regions",
+        "date": "June 18, 2026",
+        "description": "Our volunteer network continues to grow, bringing more citizens together to support community-focused initiatives and public programs.",
+        "content": "The growing volunteer network reflects the strength of community participation. Volunteers are contributing their time and skills to support local initiatives and strengthen connections between citizens and community programs."
+      },
+
+      "developmentPriorities": {
+        "category": "Public Meeting",
+        "title": "District-Level Discussion on Development Priorities",
+        "date": "June 5, 2026",
+        "description": "Citizens and community representatives came together to discuss local development priorities and important issues affecting their communities.",
+        "content": "The district-level discussion created a platform for citizens to share their views on development priorities and local concerns. The feedback gathered from these discussions will help inform our understanding of community needs and priorities."
+      }
+    }
+  },
+  "events": {
+    "eyebrow": "Upcoming Events",
+    "title": "Join Us",
+    "description": "Stay connected with our activities and take part in events that bring citizens together to discuss local priorities, community development, and our shared future.",
+
+    "buttons": {
+      "viewAll": "View All Events",
+      "link": "/events",
+      "learnMore": "Learn More",
+      "joinEvent": "Join This Event"
+    },
+    "details": {
+      "title": "Event Details",
+      "date": "Date",
+      "time": "Time",
+      "location": "Location",
+      "contact": "Contact Us to Attend"
+    },
+    "notFound": "The requested event could not be found.",
+    "cta": {
+      "title": "Bring Your Ideas to the Conversation",
+      "description": "Attend an upcoming event or contact us to learn how you can take part in your community and contribute to meaningful local development.",
+      "button": "Contact Us"
+    },
+
+    "articles": {
+      "communityOutreach": {
+        "title": "Community Outreach Programme",
+        "date": "August 15, 2026",
+        "time": "10:00 AM",
+        "location": "Hyderabad",
+        "description": "Meet our representatives and community members to discuss local priorities, public needs, and practical development initiatives.",
+        "content": "This community outreach programme provides citizens an opportunity to meet party representatives, share their concerns, and discuss priorities for local development. We believe meaningful public service begins with listening to the people and understanding the needs of every community."
+      },
+
+      "youthLeadership": {
+        "title": "Youth Leadership Programme",
+        "date": "August 22, 2026",
+        "time": "11:00 AM",
+        "location": "Warangal",
+        "description": "An initiative focused on youth leadership, skills development, education, and creating opportunities for the next generation.",
+        "content": "The Youth Leadership Programme encourages young people to participate in community development and public life. Through dialogue, learning, and leadership activities, the programme aims to help young citizens develop the skills and confidence to contribute positively to society."
+      },
+
+      "publicMeeting": {
+        "title": "Public Meeting",
+        "date": "August 30, 2026",
+        "time": "4:00 PM",
+        "location": "Mahabubnagar",
+        "description": "An open platform for citizens to interact with party representatives, raise local concerns, and share their views on development priorities.",
+        "content": "This public meeting provides an open forum for citizens to engage directly with party representatives. Community members can share their experiences, raise concerns, and discuss priorities that matter to their neighbourhoods and communities."
+      }
+    }
+  },
+  "achievements": {
+    "eyebrow": "Our Impact",
+    "title": "Making a Difference",
+    "description": "Our commitment to public service is reflected in the work we undertake and the positive change we strive to create across communities.",
+
+    "achievements": {
+      "communityInitiatives": {
+        "label": "Community Initiatives",
+        "description": "Programs focused on improving the lives of people and strengthening local communities."
+      },
+
+      "developmentProjects": {
+        "label": "Development Projects",
+        "description": "Initiatives supporting infrastructure, education, healthcare, livelihoods, and sustainable development."
+      },
+
+      "peopleReached": {
+        "label": "People Reached",
+        "description": "Citizens and communities engaged through public outreach, service initiatives, and development programs."
+      },
+
+      "yearsOfService": {
+        "label": "Years of Service",
+        "description": "A continuing commitment to public service, responsible governance, and inclusive progress."
+      }
+    },
+
+    "impactAreas": {
+      "communityWellbeing": {
+        "title": "Community Wellbeing",
+        "description": "Supporting practical initiatives that respond to the needs, concerns, and aspirations of local communities."
+      },
+
+      "developmentOpportunity": {
+        "title": "Development & Opportunity",
+        "description": "Advancing initiatives that strengthen public services, infrastructure, education, employment, and livelihoods."
+      },
+
+      "inclusiveProgress": {
+        "title": "Inclusive Progress",
+        "description": "Working toward development that creates meaningful opportunities and reaches citizens and communities across every stage of life."
+      }
+    },
+
+    "closing": "We measure our work by the difference it makes in people's lives and by the trust we earn through consistent, accountable public service."
+  },
+  "leadership": {
+    "eyebrow": "Leadership",
+    "title": "Meet Our Leadership",
+    "description": "Meet the leaders committed to serving the people with integrity, vision, accountability, and dedication.",
+
+    "button": {
+      "text": "View Leadership"
+    },
+
+    "members": {
+      "nationalPresident": {
+        "name": "Leader Name",
+        "designation": "National President",
+        "shortBio": "Providing leadership with a clear focus on public service, inclusive development, and the aspirations of the people."
+      },
+
+      "vicePresident": {
+        "name": "Leader Name",
+        "designation": "Vice President",
+        "shortBio": "Working to strengthen communities and advance development opportunities through responsible and people-centred leadership."
+      },
+
+      "generalSecretary": {
+        "name": "Leader Name",
+        "designation": "General Secretary",
+        "shortBio": "Committed to transparent organisation, effective coordination, and accountable public service."
+      }
+    },
+    "president": {
+      "eyebrow": "Party President",
+      "title": "Leading with purpose, responsibility, and a commitment to public service"
+    },
+
+    "executive": {
+      "eyebrow": "Executive Team",
+      "title": "Serving communities with dedication and accountability"
+    },
+
+    "cta": {
+      "title": "Work with Our Leadership Team",
+      "description": "Connect with us to share your ideas, support community initiatives, and contribute to building a stronger and more inclusive future.",
+      "button": "Contact Us"
+    }
+  },
+  "manifesto": {
+    "eyebrow": "Our Manifesto",
+    "title": "A Practical Plan for Shared Progress",
+    "description": "Our commitments focus on the everyday priorities of citizens and on building stronger, more inclusive communities.",
+    "commitment": {
+      "eyebrow": "Our Commitment",
+      "title": "Priorities Shaped Around People",
+      "introduction": "This manifesto sets out our priorities for focused action that can expand opportunity, strengthen public services, support local communities, and improve quality of life."
+    },
+
+    "priorities": {
+      "education": {
+        "title": "Education",
+        "description": "Strengthen quality learning environments, improve access to education, and expand skills and opportunities that prepare every learner for the future."
+      },
+
+      "healthcare": {
+        "title": "Healthcare",
+        "description": "Work toward accessible, affordable, and reliable healthcare services so that every family can access essential care with dignity."
+      },
+
+      "employment": {
+        "title": "Employment",
+        "description": "Create conditions that encourage local enterprise, entrepreneurship, investment, fair opportunities, and meaningful employment for people across communities."
+      },
+
+      "agriculture": {
+        "title": "Agriculture",
+        "description": "Support farmers through practical policies, sustainable agricultural practices, better access to markets, and stronger rural livelihoods."
+      },
+
+      "infrastructure": {
+        "title": "Infrastructure",
+        "description": "Invest in dependable roads, public services, digital connectivity, and essential infrastructure that enables communities and local economies to grow."
+      },
+
+      "womensWelfare": {
+        "title": "Women's Welfare",
+        "description": "Promote women's safety, equal opportunity, access to healthcare, education, and greater participation in economic and public life."
+      },
+
+      "youthPrograms": {
+        "title": "Youth & Opportunities",
+        "description": "Expand pathways to education, skills, entrepreneurship, employment, and meaningful civic participation for the next generation."
+      }
+    },
+
+    "participation": {
+      "eyebrow": "Read & Participate",
+      "title": "A Plan That Grows With Public Participation",
+      "description": "Your perspective matters. Read our commitments and share the priorities that matter most to your family and community.",
+      "download": "Download the Full Manifesto",
+      "share": "Share Your Priorities"
+    }
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "CONNECT WITH US",
+      "title": "Your Voice Matters.",
+      "description": "Every meaningful change begins with a conversation. Share your ideas, concerns, suggestions, or simply connect with us.",
+      "primaryButton": "Share Your Voice",
+      "secondaryButton": "Join the Movement"
+    },
+
+    "contactInfoSection": {
+      "eyebrow": "CONTACT",
+      "title": "We're here",
+      "titleHighlight": "to listen.",
+      "description": "Have a question, suggestion, or simply want to connect? Reach out to us. We believe listening to people is the first step toward responsible public service."
+    },
+
+    "contactInfo": {
+      "headquarters": {
+        "label": "VISIT",
+        "title": "Party Headquarters",
+        "value": "Hyderabad, Telangana"
+      },
+      "phone": {
+        "label": "CALL",
+        "title": "Talk to Us",
+        "value": "+91 98765 43210"
+      },
+      "email": {
+        "label": "WRITE",
+        "title": "Send Us an Email",
+        "value": "info@exampleparty.org"
+      },
+      "hours": {
+        "label": "HOURS",
+        "title": "Office Hours",
+        "value": "Monday – Saturday, 9:00 AM – 6:00 PM"
+      }
+    },
+
+    "messageSection": {
+      "eyebrow": "WE ARE LISTENING",
+      "title": "Tell Us What Matters.",
+      "description": "Have an idea for your community? A concern that deserves attention? Or want to help create positive change? We want to hear from you.",
+
+      "messageNote": {
+        "title": "Every message matters.",
+        "description": "Your voice helps shape our priorities."
+      },
+
+      "form": {
+        "nameLabel": "Name",
+        "name": "Your Name",
+        "emailLabel": "Email",
+        "email": "Email Address",
+        "phoneLabel": "Phone",
+        "phone": "Phone Number",
+        "messageLabel": "Message",
+        "message": "Tell us what is on your mind...",
+        "button": "Send Your Message"
+      }
+    },
+
+    "connectSection": {
+      "eyebrow": "STAY CONNECTED",
+      "title": "We're Listening.",
+      "description": "Follow our work, stay informed, and be part of the conversation wherever you are.",
+
+      "location": {
+        "title": "Based in Telangana",
+        "value": "Hyderabad, Telangana, India"
+      },
+
+      "socialEyebrow": "FOLLOW THE JOURNEY",
+      "socialTitle": "Stay connected with us.",
+      "socialDescription": "Follow our latest updates, initiatives, conversations, and community work."
+    },
+
+    "finalCta": {
+      "eyebrow": "TOGETHER",
+      "title": "Change begins when people come together.",
+      "description": "Be part of the conversation. Be part of the movement. Be part of the change.",
+      "button": "Join the Movement"
+    }
+  }
+}

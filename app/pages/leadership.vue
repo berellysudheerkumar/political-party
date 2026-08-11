@@ -1,52 +1,65 @@
 <script setup lang="ts">
-import LeaderCard from '~/app/components/LeaderCard.vue';
+import LeaderCard from '~/components/LeaderCard.vue';
 import { branding } from '~/config/content/brand';
 import { leadershipContent } from '~/config/content/leadership';
 import { siteTheme } from '~/config/theme';
 
 const [president, ...executiveMembers] = leadershipContent.members;
+const { t } = useI18n();
 
 useSeoMeta({
   title: `Leadership | ${branding.name}`,
-  description: leadershipContent.description,
+  description: t('leadership.description'),
 });
 </script>
 
 <template>
   <div>
-    <section class="bg-gray-50 py-20 sm:py-24">
+    <!-- Hero Section -->
+    <section :class="['py-20 sm:py-24', siteTheme.colors.background.surface]">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="max-w-3xl">
           <p
-            class="text-sm font-semibold tracking-widest uppercase"
-            :class="siteTheme.colors.primary.text"
+            :class="[
+              'text-sm font-semibold tracking-widest uppercase',
+              siteTheme.colors.accent.text,
+            ]"
           >
-            {{ leadershipContent.eyebrow }}
+            {{ t('leadership.eyebrow') }}
           </p>
-          <h1 class="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-            {{ leadershipContent.title }}
-          </h1>
-          <p class="mt-6 text-lg leading-8" :class="siteTheme.colors.text.secondary">
-            {{ leadershipContent.description }}
+
+          <h2 :class="['mt-4', siteTheme.typography.heading.large, siteTheme.colors.text.primary]">
+            {{ t('leadership.title') }}
+          </h2>
+
+          <p
+            :class="[
+              'mt-5 max-w-2xl',
+              siteTheme.typography.body.large,
+              siteTheme.colors.text.secondary,
+            ]"
+          >
+            {{ t('leadership.description') }}
           </p>
         </div>
       </div>
     </section>
 
+    <!-- President Section -->
     <section v-if="president" class="py-20 sm:py-24">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="max-w-2xl">
           <p
-            class="text-sm font-semibold tracking-widest uppercase"
-            :class="siteTheme.colors.primary.text"
+            :class="[
+              'text-sm font-semibold tracking-widest uppercase',
+              siteTheme.colors.accent.text,
+            ]"
           >
-            Party President
+            {{ t('leadership.president.eyebrow') }}
           </p>
-          <h2
-            class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl"
-            :class="siteTheme.colors.text.primary"
-          >
-            Leading with purpose and responsibility
+
+          <h2 :class="['mt-4', siteTheme.typography.heading.medium, siteTheme.colors.text.primary]">
+            {{ t('leadership.president.title') }}
           </h2>
         </div>
 
@@ -56,20 +69,24 @@ useSeoMeta({
       </div>
     </section>
 
-    <section v-if="executiveMembers.length" class="bg-gray-50 py-20 sm:py-24">
+    <!-- Executive Team Section -->
+    <section
+      v-if="executiveMembers.length"
+      :class="['py-20 sm:py-24', siteTheme.colors.background.surface]"
+    >
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="max-w-2xl">
           <p
-            class="text-sm font-semibold tracking-widest uppercase"
-            :class="siteTheme.colors.primary.text"
+            :class="[
+              'text-sm font-semibold tracking-widest uppercase',
+              siteTheme.colors.accent.text,
+            ]"
           >
-            Executive Team
+            {{ t('leadership.executive.eyebrow') }}
           </p>
-          <h2
-            class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl"
-            :class="siteTheme.colors.text.primary"
-          >
-            Serving communities with dedication
+
+          <h2 :class="['mt-4', siteTheme.typography.heading.medium, siteTheme.colors.text.primary]">
+            {{ t('leadership.executive.title') }}
           </h2>
         </div>
 
@@ -79,31 +96,32 @@ useSeoMeta({
       </div>
     </section>
 
+    <!-- Leadership CTA -->
     <section class="py-20 sm:py-24">
       <div class="mx-auto max-w-4xl px-6 text-center lg:px-8">
-        <h2
-          class="text-3xl font-bold tracking-tight sm:text-4xl"
-          :class="siteTheme.colors.text.primary"
-        >
-          Work with our leadership team
+        <h2 :class="[siteTheme.typography.heading.medium, siteTheme.colors.text.primary]">
+          {{ t('leadership.cta.title') }}
         </h2>
+
         <p
-          class="mx-auto mt-5 max-w-2xl text-lg leading-8"
-          :class="siteTheme.colors.text.secondary"
-        >
-          Connect with us to share your ideas, support community initiatives, and help shape a
-          better future.
-        </p>
-        <NuxtLink
-          to="/contact"
-          class="mt-8 inline-flex rounded-xl px-6 py-3.5 font-semibold transition-colors"
           :class="[
-            siteTheme.colors.primary.background,
-            siteTheme.colors.primary.hover,
-            siteTheme.colors.text.inverse,
+            'mx-auto mt-5 max-w-2xl',
+            siteTheme.typography.body.large,
+            siteTheme.colors.text.secondary,
           ]"
         >
-          Contact Us
+          {{ t('leadership.cta.description') }}
+        </p>
+
+        <NuxtLink
+          to="/contact"
+          :class="[
+            'mt-8 inline-flex',
+            siteTheme.components.button.base,
+            siteTheme.components.button.primary,
+          ]"
+        >
+          {{ t('leadership.cta.button') }}
         </NuxtLink>
       </div>
     </section>

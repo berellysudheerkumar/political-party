@@ -1,30 +1,37 @@
 export const navigation = [
   {
-    name: 'Home',
+    id: 'home',
     path: '/',
+    labelKey: 'navigation.home',
   },
   {
-    name: 'About',
+    id: 'about',
     path: '/about',
+    labelKey: 'navigation.about',
   },
   {
-    name: 'Leadership',
+    id: 'leadership',
     path: '/leadership',
+    labelKey: 'navigation.leadership',
   },
   {
-    name: 'Manifesto',
+    id: 'manifesto',
     path: '/manifesto',
+    labelKey: 'navigation.manifesto',
   },
   {
-    name: 'Events',
+    id: 'events',
     path: '/events',
+    labelKey: 'navigation.events',
   },
   {
-    name: 'News',
+    id: 'news',
     path: '/news',
+    labelKey: 'navigation.news',
   },
   {
-    name: 'Contact',
+    id: 'contact',
     path: '/contact',
+    labelKey: 'navigation.contact',
   },
 ];

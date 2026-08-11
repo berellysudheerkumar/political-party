@@ -1,107 +1,142 @@
 <script setup lang="ts">
-import { branding } from '~/config/content/brand';
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
 import { eventsContent } from '~/config/content/events';
 import { siteTheme } from '~/config/theme';
 
+const { t } = useI18n();
 const route = useRoute();
-const slug = Array.isArray(route.params.slug) ? route.params.slug[0] : route.params.slug;
-const event = eventsContent.events.find((item) => item.link === `/events/${slug}`);
 
-if (!event) {
-  throw createError({
-    statusCode: 404,
-    statusMessage: 'Event not found',
-  });
-}
+const event = computed(() => {
+  return eventsContent.events.find((item) => item.link === `/events/${route.params.slug}`);
+});
 
-useSeoMeta({
-  title: `${event.title} | ${branding.name}`,
-  description: event.description,
+const eventKey = computed(() => {
+  return event.value ? `events.articles.${event.value.id}` : '';
 });
 </script>
 
 <template>
-  <article>
-    <header class="py-20 sm:py-24" :class="siteTheme.colors.background.surface">
-      <div class="mx-auto max-w-3xl px-6 lg:px-8">
-        <NuxtLink
-          to="/events"
-          class="inline-flex items-center text-sm font-semibold transition-colors hover:text-blue-800"
-          :class="siteTheme.colors.primary.text"
+  <div v-if="event">
+    <!-- HERO -->
+    <header :class="['border-b', siteTheme.colors.border]">
+      <div class="mx-auto max-w-5xl px-6 py-16 sm:py-20 lg:px-8">
+        <!-- Event Category Badge -->
+        <span
+          :class="[
+            'inline-flex rounded-full px-4 py-2 text-xs font-bold tracking-[0.15em] uppercase',
+            siteTheme.colors.background.surface,
+            siteTheme.colors.accent.text,
+          ]"
         >
-          <span class="mr-2">←</span>
-          All Events
-        </NuxtLink>
+          {{ t('events.eyebrow') }}
+        </span>
 
-        <p class="mt-10 text-sm font-semibold" :class="siteTheme.colors.primary.text">
-          {{ event.date }}
+        <!-- Date -->
+        <p :class="['mt-6 text-sm font-semibold', siteTheme.colors.accent.text]">
+          {{ t(`${eventKey}.date`) }}
         </p>
+
+        <!-- Title -->
         <h1
-          class="mt-5 text-4xl font-extrabold tracking-tight sm:text-5xl"
-          :class="siteTheme.colors.text.primary"
+          :class="[
+            'mt-4 max-w-4xl',
+            siteTheme.typography.heading.large,
+            siteTheme.colors.text.primary,
+          ]"
         >
-          {{ event.title }}
+          {{ t(`${eventKey}.title`) }}
         </h1>
       </div>
     </header>
 
+    <!-- CONTENT -->
     <div
       class="mx-auto grid max-w-5xl gap-12 px-6 py-16 sm:py-20 lg:grid-cols-[1.2fr_0.8fr] lg:px-8"
     >
+      <!-- MAIN CONTENT -->
       <div>
-        <p class="text-xl leading-9" :class="siteTheme.colors.text.secondary">
-          {{ event.description }}
+        <!-- Description -->
+        <p :class="[siteTheme.typography.body.large, siteTheme.colors.text.secondary]">
+          {{ t(`${eventKey}.description`) }}
         </p>
 
-        <div v-if="event.body?.length" class="mt-8 space-y-6">
-          <p
-            v-for="paragraph in event.body"
-            :key="paragraph"
-            class="leading-8"
-            :class="siteTheme.colors.text.secondary"
-          >
-            {{ paragraph }}
+        <!-- Full Event Content -->
+        <div class="mt-8">
+          <p :class="[siteTheme.typography.body.normal, siteTheme.colors.text.secondary]">
+            {{ t(`${eventKey}.content`) }}
           </p>
         </div>
       </div>
 
-      <aside
-        class="h-fit rounded-2xl"
-        :class="[
-          siteTheme.components.card.background,
-          siteTheme.components.card.border,
-          siteTheme.components.card.shadow,
-          siteTheme.components.card.padding,
-        ]"
-      >
-        <h2 class="text-xl font-bold" :class="siteTheme.colors.text.primary">Event Details</h2>
-        <dl class="mt-6 space-y-5 text-sm" :class="siteTheme.colors.text.secondary">
+      <!-- EVENT DETAILS (Aside Card) -->
+      <aside :class="['h-fit', siteTheme.components.card.base]">
+        <h2 :class="['text-xl font-bold', siteTheme.colors.text.primary]">
+          {{ t('events.details.title') }}
+        </h2>
+
+        <dl :class="['mt-6 space-y-5 text-sm', siteTheme.colors.text.secondary]">
+          <!-- DATE -->
           <div>
-            <dt class="font-semibold" :class="siteTheme.colors.text.primary">Date</dt>
-            <dd class="mt-1">{{ event.date }}</dd>
+            <dt :class="['font-semibold', siteTheme.colors.text.primary]">
+              {{ t('events.details.date') }}
+            </dt>
+            <dd class="mt-1">
+              {{ t(`${eventKey}.date`) }}
+            </dd>
           </div>
+
+          <!-- TIME -->
           <div>
-            <dt class="font-semibold" :class="siteTheme.colors.text.primary">Time</dt>
-            <dd class="mt-1">{{ event.time }}</dd>
+            <dt :class="['font-semibold', siteTheme.colors.text.primary]">
+              {{ t('events.details.time') }}
+            </dt>
+            <dd class="mt-1">
+              {{ t(`${eventKey}.time`) }}
+            </dd>
           </div>
+
+          <!-- LOCATION -->
           <div>
-            <dt class="font-semibold" :class="siteTheme.colors.text.primary">Location</dt>
-            <dd class="mt-1">{{ event.location }}</dd>
+            <dt :class="['font-semibold', siteTheme.colors.text.primary]">
+              {{ t('events.details.location') }}
+            </dt>
+            <dd class="mt-1">
+              {{ t(`${eventKey}.location`) }}
+            </dd>
           </div>
         </dl>
 
+        <!-- CONTACT BUTTON -->
         <NuxtLink
           to="/contact"
-          class="mt-8 inline-flex w-full justify-center rounded-xl px-5 py-3 font-semibold transition-colors"
           :class="[
-            siteTheme.colors.primary.background,
-            siteTheme.colors.primary.hover,
-            siteTheme.colors.text.inverse,
+            'mt-8 flex w-full justify-center',
+            siteTheme.components.button.base,
+            siteTheme.components.button.primary,
           ]"
         >
-          Contact Us to Attend
+          {{ t('events.details.contact') }}
         </NuxtLink>
       </aside>
     </div>
-  </article>
+  </div>
+
+  <!-- EVENT NOT FOUND -->
+  <div v-else class="mx-auto max-w-3xl px-6 py-24 text-center">
+    <h1 :class="[siteTheme.typography.heading.medium, siteTheme.colors.text.primary]">
+      {{ t('events.notFound') }}
+    </h1>
+
+    <NuxtLink
+      to="/events"
+      :class="[
+        'mt-6 inline-flex',
+        siteTheme.components.button.base,
+        siteTheme.components.button.primary,
+      ]"
+    >
+      {{ t('events.buttons.viewAll') }}
+    </NuxtLink>
+  </div>
 </template>

@@ -1,61 +1,42 @@
 type ImpactArea = {
-  title: string;
-  description: string;
+  id: string;
 };
 
 export const achievementsContent = {
-  eyebrow: 'Our Impact',
-
-  title: 'Making a Difference',
-
-  description:
-    'Our commitment is reflected in the work we do and the positive change we strive to create across communities.',
-
   achievements: [
     {
-      id: 1,
+      id: 'communityInitiatives',
       value: '100+',
-      label: 'Community Initiatives',
-      description: 'Programs focused on improving the lives of people across communities.',
     },
     {
-      id: 2,
+      id: 'developmentProjects',
       value: '50+',
-      label: 'Development Projects',
-      description: 'Initiatives supporting infrastructure, education, healthcare, and development.',
     },
     {
-      id: 3,
+      id: 'peopleReached',
       value: '25K+',
-      label: 'People Reached',
-      description: 'Citizens and communities reached through our various initiatives.',
     },
     {
-      id: 4,
+      id: 'yearsOfService',
       value: '10+',
-      label: 'Years of Service',
-      description: 'A continued commitment to public service, progress, and inclusive development.',
     },
   ],
 
   impactAreas: [
     {
-      title: 'Community Wellbeing',
-      description:
-        'Supporting practical initiatives that respond to the needs and aspirations of local communities.',
+      id: 'communityWellbeing',
     },
     {
-      title: 'Development and Opportunity',
-      description:
-        'Advancing work that strengthens public services, infrastructure, education, and livelihoods.',
+      id: 'developmentOpportunity',
     },
     {
-      title: 'Inclusive Progress',
-      description:
-        'Working to ensure that progress reaches citizens and communities across every stage of life.',
+      id: 'inclusiveProgress',
     },
-  ] satisfies ImpactArea[],
-
-  closing:
-    'We measure our work by the difference it makes in people’s lives and by the trust we build through consistent public service.',
+  ],
+} satisfies {
+  achievements: {
+    id: string;
+    value: string;
+  }[];
+  impactAreas: ImpactArea[];
 };

@@ -1,46 +1,55 @@
+/**
+ * 1. Design Tokens
+ * Change these base classes to re-theme the entire application instantly.
+ */
+const tokens = {
+  primary: {
+    bg: 'bg-amber-600',
+    hover: 'hover:bg-amber-700',
+    text: 'text-amber-600',
+    focus: 'focus:ring-amber-600',
+  },
+  dark: {
+    bg: 'bg-blue-950',
+    hover: 'hover:bg-blue-900',
+    text: 'text-blue-950',
+    border: 'border-blue-900',
+  },
+  light: { bg: 'bg-amber-50', text: 'text-white', border: 'border-amber-200' },
+  surface: { bg: 'bg-amber-100/60' },
+  text: { main: 'text-stone-900', muted: 'text-stone-700', alt: 'text-blue-200' },
+  border: { default: 'border-amber-200' },
+};
+
+/**
+ * 2. Reusable Theme Configuration
+ */
 export const siteTheme = {
-  /**
-   * Global reusable colors
-   */
   colors: {
-    primary: {
-      background: 'bg-blue-700',
-      hover: 'hover:bg-blue-800',
-      text: 'text-blue-700',
-    },
-
-    secondary: {
-      background: 'bg-gray-100',
-      hover: 'hover:bg-gray-200',
-      text: 'text-gray-700',
-    },
-
     text: {
-      primary: 'text-gray-900',
-      secondary: 'text-gray-600',
-      muted: 'text-gray-500',
-      inverse: 'text-white',
-      paragraph: 'text-blue-200',
+      primary: tokens.text.main,
+      secondary: tokens.text.muted,
+      inverse: tokens.light.text,
     },
-
     background: {
-      default: 'bg-white',
-      surface: 'bg-gray-50',
-      dark: 'bg-gray-900',
+      default: tokens.light.bg,
+      surface: tokens.surface.bg,
+      dark: tokens.dark.bg,
     },
-
-    border: {
-      default: 'border-gray-200',
+    accent: {
+      background: tokens.primary.bg,
+      hover: tokens.primary.hover,
+      text: tokens.primary.text,
     },
+    border: tokens.border.default,
   },
 
-  /**
-   * Global typography
-   */
   typography: {
+    font: { english: 'font-english', telugu: 'font-telugu' },
+
     heading: {
-      large: 'text-5xl lg:text-7xl font-extrabold',
-      medium: 'text-3xl lg:text-4xl font-bold',
+      large: 'text-5xl lg:text-7xl font-extrabold tracking-tight',
+      medium: 'text-3xl lg:text-4xl font-bold tracking-tight',
       small: 'text-xl font-bold',
     },
 
@@ -49,175 +58,51 @@ export const siteTheme = {
       normal: 'text-base leading-7',
       small: 'text-sm',
     },
-
     navigation: 'font-medium',
-
     button: 'font-semibold',
-
-    text: 'text-gray-700',
   },
-
-  /**
-   * Component specific styling
-   */
   components: {
     button: {
-      primary: {
-        background: 'bg-blue-700',
-        hover: 'hover:bg-blue-800',
-        text: 'text-white',
-      },
-
-      secondary: {
-        background: 'bg-white',
-        hover: 'hover:bg-gray-100',
-        text: 'text-blue-700',
-      },
-
-      outline: {
-        background: 'bg-transparent',
-        border: 'border border-white',
-        hover: 'hover:bg-white hover:text-blue-700',
-        text: 'text-white',
-      },
-
-      base: 'rounded-xl px-6 py-3.5 transition-all duration-300 font-semibold',
+      base: 'rounded-xl px-6 py-3.5 transition-all duration-300 font-semibold shadow-sm',
+      primary: `${tokens.primary.bg} ${tokens.primary.hover} text-white`,
+      secondary: `${tokens.dark.bg} ${tokens.dark.hover} text-white`,
+      outline: `bg-transparent border ${tokens.dark.border} ${tokens.dark.text} ${tokens.dark.hover} hover:text-white`,
     },
 
-    navbar: {
-      background: 'bg-white',
-
-      scrolled: {
-        shadow: 'shadow-lg',
-        background: 'bg-white/95 backdrop-blur-md',
+    // Grouped layout sections to reduce repetition
+    layout: {
+      navbar: {
+        base: 'bg-amber-50/90 backdrop-blur-md border-b border-amber-200',
+        scrolled: 'bg-amber-50/95 backdrop-blur-md shadow-lg border-b border-amber-200',
+        link: `${tokens.text.main} hover:${tokens.primary.text}`,
       },
-
-      text: {
-        default: 'text-gray-800',
-        hover: 'hover:text-blue-600',
-        muted: 'text-gray-600',
+      hero: {
+        wrapper: tokens.dark.bg,
+        title: 'text-white',
+        subtitle: tokens.text.alt,
       },
-
-      button: {
-        background: 'bg-blue-700',
-        hover: 'hover:bg-blue-800',
-        text: 'text-white',
-      },
-
-      mobileMenu: {
-        background: 'bg-white',
-        border: 'border-gray-200',
-      },
-    },
-
-    hero: {
-      background: 'bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600',
-
-      badge: {
-        text: 'text-blue-200',
-      },
-
-      title: {
-        text: 'text-white',
-      },
-
-      description: {
-        text: 'text-blue-100',
-      },
-
-      buttons: {
-        primary: {
-          background: 'bg-white',
-          text: 'text-blue-700',
-          hover: 'hover:bg-gray-100',
-        },
-
-        secondary: {
-          background: 'border-white',
-          text: 'text-white',
-          hover: 'hover:bg-white hover:text-blue-700',
-        },
+      footer: {
+        wrapper: tokens.dark.bg,
+        text: tokens.text.alt,
+        link: `${tokens.text.alt} hover:text-white`,
       },
     },
 
     card: {
-      base: 'rounded-2xl transition-all duration-300',
-      background: 'bg-white',
-      border: 'border border-gray-200',
-      shadow: 'shadow-lg',
-      hover: 'hover:-translate-y-2 hover:shadow-xl',
-      padding: 'p-6',
+      base: 'bg-amber-50/80 border border-amber-200 rounded-2xl p-6 shadow-sm transition-all duration-300',
+      hover: 'hover:-translate-y-1 hover:shadow-lg',
     },
 
-    footer: {
-      background: 'bg-gray-900',
-
-      title: 'text-white font-bold',
-
-      text: 'text-gray-400',
-
-      link: 'text-gray-300 hover:text-white',
-    },
-
-    visionMission: {
-      title: 'text-3xl font-bold tracking-tight text-slate-900',
-
-      description: 'mt-4 text-lg leading-relaxed text-slate-600',
-
-      missionIcon: 'bg-blue-50 text-blue-700',
-
-      visionIcon: 'bg-amber-50 text-amber-600',
-    },
-
-    contact: {
-      section: {
-        background: 'bg-slate-50',
-        glow: 'bg-blue-600/5',
-      },
-
-      eyebrow: {
-        line: 'bg-blue-700',
-        text: 'text-blue-700',
-      },
-
-      title: {
-        text: 'text-slate-950',
-      },
-
-      description: {
-        text: 'text-slate-600',
-      },
-
-      item: {
-        border: 'border-slate-200',
-
-        icon: {
-          base: 'border border-blue-100 bg-blue-50',
-          text: 'text-blue-700',
-          hover: 'group-hover:border-blue-700 group-hover:bg-blue-700 group-hover:text-white',
-        },
-
-        label: 'text-xs font-bold tracking-[0.2em] text-slate-500',
-
-        title: 'text-lg font-bold text-slate-900',
-
-        value: 'text-sm text-slate-600',
-      },
-    },
     forms: {
-      input: {
-        background: 'bg-white',
-
-        border: 'border border-gray-300',
-
-        text: 'text-gray-900',
-
-        focus: 'focus:ring-2 focus:ring-blue-600',
-      },
-
-      label: 'text-gray-700 font-medium',
-
+      input: `bg-amber-50 border border-amber-200 ${tokens.text.main} focus:ring-2 ${tokens.primary.focus}`,
+      label: `${tokens.text.main} font-medium`,
       error: 'text-red-600 text-sm',
+    },
+
+    // Abstracted icons/accents
+    iconBox: {
+      base: `border border-amber-200 bg-amber-100/60 ${tokens.primary.text}`,
+      hover: `group-hover:border-amber-600 group-hover:${tokens.primary.bg} group-hover:text-white`,
     },
   },
 };

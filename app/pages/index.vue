@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import HeroSection from '../app/components/home/HeroSection.vue';
-import AboutSection from '../app/components/home/AboutSection.vue';
+import HeroSection from '../components/home/HeroSection.vue';
+import AboutSection from '../components/home/AboutSection.vue';
 // import VisionMissionSection from '../app/components/home/VisionMissionSection.vue';
-import NewsSection from '../app/components/home/NewsSection.vue';
-import EventsSection from '../app/components/home/EventsSection.vue';
-import AchievementsSection from '../app/components/home/AchievementsSection.vue';
-import LeadershipSection from '../app/components/home/LeadershipSection.vue';
-import CTASection from '../app/components/home/CTASection.vue';
-import GallerySection from '~/app/components/home/GallerySection.vue';
+import NewsSection from '../components/home/NewsSection.vue';
+import EventsSection from '../components/home/EventsSection.vue';
+import AchievementsSection from '../components/home/AchievementsSection.vue';
+import LeadershipSection from '../components/home/LeadershipSection.vue';
+// import CTASection from '../components/home/CTASection.vue';
+import GallerySection from '~/components/home/GallerySection.vue';
 </script>
 
 <template>

@@ -6,6 +6,11 @@ type HeroContent = {
   message: string;
 
   campaignImages: {
+    background: {
+      src: string;
+      alt: string;
+    };
+
     primary: {
       src: string;
       alt: string;
@@ -50,14 +55,18 @@ export const heroContent = {
     alt: 'Party Leader',
   },
 
-    campaignImages: {
+  campaignImages: {
+    background: {
+      src: '/images/gallery/visharadan-rally-bg.jpeg',
+      alt: 'Public rally and community gathering',
+    },
     primary: {
-      src: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30',
+      src: '/images/gallery/bg-part-1.jpg',
       alt: 'Public rally and community gathering',
     },
 
     secondary: {
-      src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac',
+      src: '/images/gallery/bg-part-1.jpg',
       alt: 'Community volunteers working together',
     },
   },

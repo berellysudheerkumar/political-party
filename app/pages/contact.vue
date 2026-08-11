@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { contactContent } from '~/config/content/contact';
 import { siteTheme } from '~/config/theme';
+const { t } = useI18n();
 </script>
 
 <template>
@@ -16,9 +17,8 @@ import { siteTheme } from '~/config/theme';
       ]"
     >
       <!-- Background glow -->
-      <div class="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl" />
-
-      <div class="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-blue-500/5 blur-3xl" />
+      <div class="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-white/5 blur-3xl" />
+      <div class="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-white/5 blur-3xl" />
 
       <!-- Noise -->
       <div
@@ -29,10 +29,11 @@ import { siteTheme } from '~/config/theme';
         <div class="max-w-4xl">
           <!-- Eyebrow -->
           <div class="mb-8 flex items-center gap-4">
-            <span :class="['h-px w-12', siteTheme.components.contact.eyebrow.line]" />
-
-            <span :class="siteTheme.components.contact.eyebrow.text">
-              {{ contactContent.hero.eyebrow }}
+            <span :class="['h-px w-12', siteTheme.colors.accent.background]" />
+            <span
+              :class="['text-sm font-bold tracking-widest uppercase', siteTheme.colors.accent.text]"
+            >
+              {{ t('contact.hero.eyebrow') }}
             </span>
           </div>
 
@@ -41,10 +42,10 @@ import { siteTheme } from '~/config/theme';
             :class="[
               'max-w-4xl',
               siteTheme.typography.heading.large,
-              siteTheme.components.hero.title.text,
+              siteTheme.components.layout.hero.title,
             ]"
           >
-            {{ contactContent.hero.title }}
+            {{ t('contact.hero.title') }}
           </h1>
 
           <!-- Description -->
@@ -52,10 +53,10 @@ import { siteTheme } from '~/config/theme';
             :class="[
               'mt-8 max-w-2xl',
               siteTheme.typography.body.large,
-              siteTheme.components.hero.description.text,
+              siteTheme.components.layout.hero.subtitle,
             ]"
           >
-            {{ contactContent.hero.description }}
+            {{ t('contact.hero.description') }}
           </p>
 
           <!-- Buttons -->
@@ -64,14 +65,11 @@ import { siteTheme } from '~/config/theme';
               href="#message"
               :class="[
                 siteTheme.components.button.base,
-                siteTheme.components.button.primary.background,
-                siteTheme.components.button.primary.hover,
-                siteTheme.components.button.primary.text,
+                siteTheme.components.button.primary,
                 'inline-flex items-center justify-center rounded-full px-8 py-4',
               ]"
             >
-              {{ contactContent.hero.primaryButton }}
-
+              {{ t('contact.hero.primaryButton') }}
               <Icon name="lucide:arrow-down" class="ml-2 h-5 w-5" />
             </a>
 
@@ -79,14 +77,11 @@ import { siteTheme } from '~/config/theme';
               href="#connect"
               :class="[
                 siteTheme.components.button.base,
-                siteTheme.components.button.outline.border,
-                siteTheme.components.button.outline.hover,
-                siteTheme.components.button.outline.text,
+                siteTheme.components.button.outline,
                 'inline-flex items-center justify-center rounded-full px-8 py-4',
               ]"
             >
-              {{ contactContent.hero.secondaryButton }}
-
+              {{ t('contact.hero.secondaryButton') }}
               <Icon name="lucide:arrow-right" class="ml-2 h-5 w-5" />
             </a>
           </div>
@@ -99,16 +94,13 @@ import { siteTheme } from '~/config/theme';
     <!-- ========================================================= -->
 
     <section
-      :class="[
-        'relative overflow-hidden py-24 lg:py-32',
-        siteTheme.components.contact.section.background,
-      ]"
+      :class="['relative overflow-hidden py-24 lg:py-32', siteTheme.colors.background.default]"
     >
       <!-- Subtle background glow -->
       <div
         :class="[
-          'absolute -top-40 -right-40 h-96 w-96 rounded-full blur-3xl',
-          siteTheme.components.contact.section.glow,
+          'absolute -top-40 -right-40 h-96 w-96 rounded-full opacity-10 blur-3xl',
+          siteTheme.colors.accent.background,
         ]"
       />
 
@@ -117,29 +109,31 @@ import { siteTheme } from '~/config/theme';
           <!-- LEFT -->
           <div class="flex flex-col justify-center">
             <div class="flex items-center gap-4">
-              <span :class="['h-px w-10', siteTheme.components.contact.eyebrow.line]" />
-
-              <span :class="siteTheme.components.contact.eyebrow.text"> CONTACT </span>
+              <span :class="['h-px w-10', siteTheme.colors.accent.background]" />
+              <span
+                :class="[
+                  'text-sm font-bold tracking-widest uppercase',
+                  siteTheme.colors.accent.text,
+                ]"
+              >
+                {{ t('contact.contactInfoSection.eyebrow') }}
+              </span>
             </div>
 
             <h2
               :class="[
                 'mt-7 max-w-xl text-5xl leading-tight font-black tracking-tight sm:text-6xl',
-                siteTheme.components.contact.title.text,
+                siteTheme.colors.text.primary,
               ]"
             >
-              We're here
-              <span class="text-blue-500"> to listen. </span>
+              {{ t('contact.contactInfoSection.title') }}
+              <span :class="siteTheme.colors.accent.text">
+                {{ t('contact.contactInfoSection.titleHighlight') }}
+              </span>
             </h2>
 
-            <p
-              :class="[
-                'mt-6 max-w-lg text-lg leading-8',
-                siteTheme.components.contact.description.text,
-              ]"
-            >
-              Have a question, suggestion, or simply want to connect? Reach out to us. We'd love to
-              hear from you.
+            <p :class="['mt-6 max-w-lg text-lg leading-8', siteTheme.colors.text.secondary]">
+              {{ t('contact.contactInfoSection.description') }}
             </p>
           </div>
 
@@ -150,16 +144,15 @@ import { siteTheme } from '~/config/theme';
               :key="item.id"
               :class="[
                 'group flex items-center gap-5 border-b py-6 first:pt-0 last:border-b-0',
-                siteTheme.components.contact.item.border,
+                siteTheme.colors.border,
               ]"
             >
               <!-- Icon -->
               <div
                 :class="[
                   'flex h-12 w-12 shrink-0 items-center justify-center rounded-full transition-all duration-300',
-                  siteTheme.components.contact.item.icon.base,
-                  siteTheme.components.contact.item.icon.text,
-                  siteTheme.components.contact.item.icon.hover,
+                  siteTheme.components.iconBox.base,
+                  siteTheme.components.iconBox.hover,
                 ]"
               >
                 <Icon :name="item.icon" class="h-5 w-5" />
@@ -167,16 +160,16 @@ import { siteTheme } from '~/config/theme';
 
               <!-- Details -->
               <div class="min-w-0">
-                <p :class="siteTheme.components.contact.item.label">
-                  {{ item.label }}
+                <p class="text-xs font-bold tracking-[0.2em] text-slate-500">
+                  {{ t(`contact.contactInfo.${item.id}.label`) }}
                 </p>
 
-                <h3 :class="['mt-1', siteTheme.components.contact.item.title]">
-                  {{ item.title }}
+                <h3 :class="['mt-1 text-lg font-bold', siteTheme.colors.text.primary]">
+                  {{ t(`contact.contactInfo.${item.id}.title`) }}
                 </h3>
 
-                <p :class="['mt-1', siteTheme.components.contact.item.value]">
-                  {{ item.value }}
+                <p :class="['mt-1 text-sm', siteTheme.colors.text.secondary]">
+                  {{ t(`contact.contactInfo.${item.id}.value`) }}
                 </p>
               </div>
             </div>
@@ -194,15 +187,16 @@ import { siteTheme } from '~/config/theme';
         <!-- LEFT -->
         <div class="flex flex-col justify-center">
           <div class="flex items-center gap-4">
-            <span :class="['h-px w-10', siteTheme.components.contact.eyebrow.line]" />
-
-            <span :class="siteTheme.components.contact.eyebrow.text">
-              {{ contactContent.messageSection.eyebrow }}
+            <span :class="['h-px w-10', siteTheme.colors.accent.background]" />
+            <span
+              :class="['text-sm font-bold tracking-widest uppercase', siteTheme.colors.accent.text]"
+            >
+              {{ t('contact.messageSection.eyebrow') }}
             </span>
           </div>
 
           <h2 :class="['mt-6', siteTheme.typography.heading.medium, siteTheme.colors.text.primary]">
-            {{ contactContent.messageSection.title }}
+            {{ t('contact.messageSection.title') }}
           </h2>
 
           <p
@@ -212,7 +206,7 @@ import { siteTheme } from '~/config/theme';
               siteTheme.colors.text.secondary,
             ]"
           >
-            {{ contactContent.messageSection.description }}
+            {{ t('contact.messageSection.description') }}
           </p>
 
           <div
@@ -224,7 +218,7 @@ import { siteTheme } from '~/config/theme';
             <div
               :class="[
                 'flex h-12 w-12 shrink-0 items-center justify-center rounded-full',
-                siteTheme.colors.primary.background,
+                siteTheme.colors.accent.background,
                 siteTheme.colors.text.inverse,
               ]"
             >
@@ -233,91 +227,74 @@ import { siteTheme } from '~/config/theme';
 
             <div>
               <p :class="[siteTheme.typography.button, siteTheme.colors.text.primary]">
-                Every message matters.
+                {{ t('contact.messageSection.messageNote.title') }}
               </p>
-
-              <p :class="[siteTheme.typography.body.small, siteTheme.colors.text.muted]">
-                Your voice helps shape our priorities.
+              <p :class="[siteTheme.typography.body.small, siteTheme.colors.text.secondary]">
+                {{ t('contact.messageSection.messageNote.description') }}
               </p>
             </div>
           </div>
         </div>
 
         <!-- FORM -->
-        <div
-          :class="[
-            siteTheme.components.card.base,
-            siteTheme.components.card.background,
-            siteTheme.components.card.border,
-            siteTheme.components.card.shadow,
-            'rounded-3xl p-7 sm:p-10',
-          ]"
-        >
+        <div :class="[siteTheme.components.card.base, 'rounded-3xl !p-7 sm:!p-10']">
           <form class="space-y-6">
             <!-- Name -->
             <div>
-              <label :class="siteTheme.components.forms.label"> Name </label>
-
+              <label :class="siteTheme.components.forms.label">
+                {{ t('contact.messageSection.form.nameLabel') }}
+              </label>
               <input
                 type="text"
-                :placeholder="contactContent.messageSection.form.name"
+                :placeholder="t('contact.messageSection.form.name')"
                 :class="[
                   'mt-2 w-full rounded-xl px-5 py-4 transition outline-none',
-                  siteTheme.components.forms.input.background,
-                  siteTheme.components.forms.input.border,
-                  siteTheme.components.forms.input.text,
-                  siteTheme.components.forms.input.focus,
+                  siteTheme.components.forms.input,
                 ]"
               />
             </div>
 
             <!-- Email -->
             <div>
-              <label :class="siteTheme.components.forms.label"> Email </label>
-
+              <label :class="siteTheme.components.forms.label">
+                {{ t('contact.messageSection.form.emailLabel') }}
+              </label>
               <input
                 type="email"
-                :placeholder="contactContent.messageSection.form.email"
+                :placeholder="t('contact.messageSection.form.email')"
                 :class="[
                   'mt-2 w-full rounded-xl px-5 py-4 transition outline-none',
-                  siteTheme.components.forms.input.background,
-                  siteTheme.components.forms.input.border,
-                  siteTheme.components.forms.input.text,
-                  siteTheme.components.forms.input.focus,
+                  siteTheme.components.forms.input,
                 ]"
               />
             </div>
 
             <!-- Phone -->
             <div>
-              <label :class="siteTheme.components.forms.label"> Phone </label>
-
+              <label :class="siteTheme.components.forms.label">
+                {{ t('contact.messageSection.form.phoneLabel') }}
+              </label>
               <input
                 type="tel"
-                :placeholder="contactContent.messageSection.form.phone"
+                :placeholder="t('contact.messageSection.form.phone')"
                 :class="[
                   'mt-2 w-full rounded-xl px-5 py-4 transition outline-none',
-                  siteTheme.components.forms.input.background,
-                  siteTheme.components.forms.input.border,
-                  siteTheme.components.forms.input.text,
-                  siteTheme.components.forms.input.focus,
+                  siteTheme.components.forms.input,
                 ]"
               />
             </div>
 
             <!-- Message -->
             <div>
-              <label :class="siteTheme.components.forms.label"> Message </label>
-
+              <label :class="siteTheme.components.forms.label">
+                {{ t('contact.messageSection.form.messageLabel') }}
+              </label>
               <textarea
                 rows="5"
-                :placeholder="contactContent.messageSection.form.message"
+                :placeholder="t('contact.messageSection.form.message')"
                 :class="[
                   'mt-2 w-full resize-none rounded-xl px-5 py-4 transition outline-none',
-                  siteTheme.components.forms.input.background,
-                  siteTheme.components.forms.input.border,
-                  siteTheme.components.forms.input.text,
-                  siteTheme.components.forms.input.focus,
+                  siteTheme.components.forms.input,
                 ]"
               />
             </div>
@@ -327,14 +304,11 @@ import { siteTheme } from '~/config/theme';
               type="submit"
               :class="[
                 siteTheme.components.button.base,
-                siteTheme.components.button.primary.background,
-                siteTheme.components.button.primary.hover,
-                siteTheme.components.button.primary.text,
+                siteTheme.components.button.primary,
                 'flex w-full items-center justify-center rounded-xl px-6 py-4',
               ]"
             >
-              {{ contactContent.messageSection.form.button }}
-
+              {{ t('contact.messageSection.form.button') }}
               <Icon name="lucide:arrow-right" class="ml-2 h-5 w-5" />
             </button>
           </form>
@@ -354,15 +328,16 @@ import { siteTheme } from '~/config/theme';
         <!-- LEFT -->
         <div class="flex flex-col justify-center">
           <div class="flex items-center gap-4">
-            <span :class="['h-px w-10', siteTheme.components.contact.eyebrow.line]" />
-
-            <span :class="siteTheme.components.contact.eyebrow.text">
-              {{ contactContent.connectSection.eyebrow }}
+            <span :class="['h-px w-10', siteTheme.colors.accent.background]" />
+            <span
+              :class="['text-sm font-bold tracking-widest uppercase', siteTheme.colors.accent.text]"
+            >
+              {{ t('contact.connectSection.eyebrow') }}
             </span>
           </div>
 
           <h2 :class="['mt-6', siteTheme.typography.heading.medium, siteTheme.colors.text.primary]">
-            {{ contactContent.connectSection.title }}
+            {{ t('contact.connectSection.title') }}
           </h2>
 
           <p
@@ -372,7 +347,7 @@ import { siteTheme } from '~/config/theme';
               siteTheme.colors.text.secondary,
             ]"
           >
-            {{ contactContent.connectSection.description }}
+            {{ t('contact.connectSection.description') }}
           </p>
 
           <!-- Location -->
@@ -383,16 +358,15 @@ import { siteTheme } from '~/config/theme';
                 siteTheme.colors.background.default,
               ]"
             >
-              <Icon name="lucide:map-pin" :class="['h-5 w-5', siteTheme.colors.primary.text]" />
+              <Icon name="lucide:map-pin" :class="['h-5 w-5', siteTheme.colors.accent.text]" />
             </div>
 
             <div>
               <p :class="[siteTheme.typography.button, siteTheme.colors.text.primary]">
-                {{ contactContent.connectSection.location.title }}
+                {{ t('contact.connectSection.location.title') }}
               </p>
-
-              <p :class="[siteTheme.typography.body.small, siteTheme.colors.text.muted]">
-                {{ contactContent.connectSection.location.value }}
+              <p :class="[siteTheme.typography.body.small, siteTheme.colors.text.secondary]">
+                {{ t('contact.connectSection.location.value') }}
               </p>
             </div>
           </div>
@@ -405,27 +379,22 @@ import { siteTheme } from '~/config/theme';
             siteTheme.colors.background.dark,
           ]"
         >
-          <p
-            :class="[
-              'text-xs font-black tracking-[0.25em]',
-              siteTheme.components.contact.eyebrow.text,
-            ]"
-          >
-            FOLLOW THE JOURNEY
+          <p :class="['text-xs font-black tracking-[0.25em]', siteTheme.colors.accent.text]">
+            {{ t('contact.connectSection.socialEyebrow') }}
           </p>
 
           <h3 :class="['mt-4', siteTheme.typography.heading.small, siteTheme.colors.text.inverse]">
-            Stay connected with us.
+            {{ t('contact.connectSection.socialTitle') }}
           </h3>
 
           <p
             :class="[
               'mt-4 max-w-md',
               siteTheme.typography.body.normal,
-              siteTheme.colors.text.muted,
+              siteTheme.colors.text.secondary, // Assuming text.secondary maps to a good muted tone for dark bg in your tokens
             ]"
           >
-            Follow our latest updates, initiatives, conversations, and community work.
+            {{ t('contact.connectSection.socialDescription') }}
           </p>
 
           <div class="mt-10 flex flex-wrap gap-4">
@@ -436,7 +405,10 @@ import { siteTheme } from '~/config/theme';
               :aria-label="social.name"
               target="_blank"
               rel="noopener noreferrer"
-              class="group flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition hover:-translate-y-1 hover:border-blue-500 hover:bg-blue-600 hover:text-white"
+              :class="[
+                'group flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition hover:-translate-y-1 hover:text-white',
+                siteTheme.colors.accent.hover,
+              ]"
             >
               <Icon :name="social.icon" class="h-5 w-5" />
             </a>
@@ -449,14 +421,13 @@ import { siteTheme } from '~/config/theme';
     <!-- FINAL CTA -->
     <!-- ========================================================= -->
 
-    <section :class="['relative overflow-hidden', siteTheme.colors.primary.background]">
+    <section :class="['relative overflow-hidden', siteTheme.colors.accent.background]">
       <div class="absolute -top-32 -right-32 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
-
-      <div class="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-blue-950/20 blur-3xl" />
+      <div class="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-black/10 blur-3xl" />
 
       <div class="relative mx-auto max-w-5xl px-6 py-28 text-center lg:py-36">
-        <p class="text-xs font-black tracking-[0.3em] text-blue-200">
-          {{ contactContent.finalCta.eyebrow }}
+        <p class="text-xs font-black tracking-[0.3em] text-white/80">
+          {{ t('contact.finalCta.eyebrow') }}
         </p>
 
         <h2
@@ -466,25 +437,22 @@ import { siteTheme } from '~/config/theme';
             siteTheme.colors.text.inverse,
           ]"
         >
-          {{ contactContent.finalCta.title }}
+          {{ t('contact.finalCta.title') }}
         </h2>
 
-        <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-blue-100">
-          {{ contactContent.finalCta.description }}
+        <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/90">
+          {{ t('contact.finalCta.description') }}
         </p>
 
         <a
           href="#message"
           :class="[
             siteTheme.components.button.base,
-            siteTheme.components.button.secondary.background,
-            siteTheme.components.button.secondary.hover,
-            siteTheme.components.button.secondary.text,
+            siteTheme.components.button.secondary,
             'mt-10 inline-flex items-center rounded-full px-8 py-4 shadow-xl',
           ]"
         >
-          {{ contactContent.finalCta.button }}
-
+          {{ t('contact.finalCta.button') }}
           <Icon name="lucide:arrow-right" class="ml-2 h-5 w-5" />
         </a>
       </div>
