@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { siteTheme } from '~/config/theme';
-import { galleryContent } from '~/config/content/gallery';
+import { galleryContent } from '~/config/content/gallery.generated';
 
 // Track the current active slide
 const activeIndex = ref(0);
@@ -99,7 +99,7 @@ const activeImage = computed(() => {
               <img
                 :src="item.image"
                 :alt="item.title"
-                class="h-full w-full object-cover transition-transform duration-[2000ms] ease-out"
+                class="h-full w-full bg-black object-contain transition-transform duration-[2000ms] ease-out"
                 :class="{ 'scale-105': index === activeIndex }"
               />
 
@@ -121,12 +121,6 @@ const activeImage = computed(() => {
                   <div
                     :class="['mb-4 h-1 w-12 rounded-full', siteTheme.colors.accent.background]"
                   />
-
-                  <h3
-                    class="text-3xl font-extrabold tracking-tight text-white drop-shadow-lg md:text-4xl"
-                  >
-                    {{ item.title }}
-                  </h3>
                 </div>
               </div>
             </div>
@@ -159,7 +153,7 @@ const activeImage = computed(() => {
         <!-- Elegant Indicator Dots -->
         <div class="flex gap-2">
           <div
-            v-for="(_, index) in galleryContent?.items"
+            v-for="(item, index) in galleryContent?.items"
             :key="'dot-' + index"
             :class="[
               'h-1.5 rounded-full transition-all duration-500',

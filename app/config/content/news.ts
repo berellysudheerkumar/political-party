@@ -1,38 +1,44 @@
 export const newsContent = {
   articles: [
     {
-      id: 'publicServiceCenters',
-      image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac',
+      id: 'ma-bhoomi-rathayatra',
+      translationKey: 'maBhoomiRathayatra',
+      image: '/images/gallery/image4-37.jpeg',
       link: '/news/public-service-centers',
     },
 
     {
-      id: 'communityMeetings',
-      image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18',
+      id: 'velugumatla-bhoodan-land',
+      translationKey: 'velugumatlabhoodanland',
+      image: '/images/gallery/Kavitha-velugumatla.jpg',
       link: '/news/community-meetings',
     },
 
     {
-      id: 'youthLeadership',
-      image: 'https://images.unsplash.com/photo-1529390079861-591de354faf5',
+      id: 'workers-unemployed',
+      translationKey: 'workersunemployed',
+      image: '/images/gallery/image24-77.jpeg',
       link: '/news/youth-leadership',
     },
 
     {
-      id: 'greenDrive',
-      image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09',
+      id: 'farmers-families',
+      translationKey: 'farmersfamilies',
+      image: '/images/gallery/image35-99.jpeg',
       link: '/news/green-drive',
     },
 
     {
       id: 'volunteerNetwork',
-      image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a',
+      translationKey: 'volunteerNetwork',
+      image: '/images/gallery/nadergul.jpg',
       link: '/news/volunteer-network',
     },
 
     {
       id: 'developmentPriorities',
-      image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee',
+      translationKey: 'developmentPriorities',
+      image: 'images/gallery/image20-69.jpeg',
       link: '/news/development-priorities',
     },
   ],

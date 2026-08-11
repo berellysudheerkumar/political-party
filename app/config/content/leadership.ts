@@ -6,11 +6,11 @@ export const leadershipContent = {
     },
     {
       id: 'vicePresident',
-      image: '/images/leaders/visharadan.png',
+      image: '',
     },
     {
       id: 'generalSecretary',
-      image: '/images/leaders/visharadan.png',
+      image: '',
     },
   ],
 };

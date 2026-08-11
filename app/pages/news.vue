@@ -1,117 +1,191 @@
-<script setup>
+<script setup lang="ts">
+import { ref } from 'vue';
+import NewsModal from '~/components/NewsModal.vue';
+import BaseButton from '~/components/shared/BaseButton.vue';
 import { newsContent } from '~/config/content/news';
 import { siteTheme } from '~/config/theme';
-const selectedArticle = ref(null);
+
 const { t } = useI18n();
 
-function openArticle(article) {
-  selectedArticle.value = article;
-}
+const selectedArticle = ref<(typeof newsContent.articles)[number] | null>(null);
 
-function closeArticle() {
+const openArticle = (article: (typeof newsContent.articles)[number]) => {
+  selectedArticle.value = article;
+};
+
+const closeArticle = () => {
   selectedArticle.value = null;
-}
+};
 </script>
 
 <template>
-  <section class="py-20 sm:py-24">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <!-- Header -->
-      <div class="max-w-3xl">
-        <p
-          class="text-sm font-semibold tracking-widest uppercase"
-          :class="siteTheme.colors.text.primary"
-        >
-          {{ t('news.eyebrow') }}
-        </p>
+  <main
+    :class="['min-h-screen', siteTheme.colors.background.surface, siteTheme.colors.text.primary]"
+  >
+    <!-- ===================================================== -->
+    <!-- NEWS                                                   -->
+    <!-- ===================================================== -->
 
-        <h2
-          class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
-          :class="siteTheme.colors.text.primary"
-        >
-          {{ t('news.title') }}
-        </h2>
+    <section class="pt-16 pb-20 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        <!-- Header -->
 
-        <p class="mt-5 text-lg leading-8" :class="siteTheme.colors.text.secondary">
-          {{ t('news.description') }}
-        </p>
-      </div>
+        <div class="max-w-3xl">
+          <div class="mb-5 flex items-center gap-4">
+            <span :class="['h-px w-10', siteTheme.colors.accent.background]" />
 
-      <!-- Featured News Articles -->
-      <div class="mt-14 space-y-12 sm:mt-16 sm:space-y-16">
-        <article
-          v-for="(article, index) in newsContent.articles"
-          :key="article.id"
-          class="grid items-center gap-8 rounded-3xl border border-gray-100 bg-white p-4 shadow-sm transition-shadow duration-300 hover:shadow-lg sm:p-6 lg:grid-cols-2 lg:gap-12 lg:p-8"
-        >
-          <!-- IMAGE -->
-          <div :class="[index % 2 !== 0 ? 'lg:order-2' : 'lg:order-1']">
-            <div class="overflow-hidden rounded-2xl">
-              <img
-                :src="article.image"
-                :alt="t(`news.articles.${article.id}.title`)"
-                class="h-[300px] w-full object-cover transition-transform duration-700 hover:scale-105 lg:h-[360px]"
-              />
-            </div>
-          </div>
-
-          <!-- CONTENT -->
-          <div
-            :class="[
-              index % 2 !== 0 ? 'lg:order-1' : 'lg:order-2',
-              'px-2 py-6 sm:px-4 sm:py-8 lg:px-8 lg:py-10',
-            ]"
-          >
-            <!-- CATEGORY -->
-            <span
-              class="inline-flex rounded-full bg-blue-50 px-4 py-2 text-xs font-bold tracking-[0.15em] text-blue-700 uppercase"
-            >
-              {{ t(`news.articles.${article.id}.category`) }}
-            </span>
-
-            <!-- DATE -->
-            <p class="mt-5 text-sm font-medium text-gray-500">
-              {{ t(`news.articles.${article.id}.date`) }}
-            </p>
-
-            <!-- TITLE -->
-            <h3
-              class="mt-4 max-w-2xl text-2xl leading-[1.15] font-black tracking-tight text-gray-900 sm:text-3xl lg:text-4xl"
-            >
-              {{ t(`news.articles.${article.id}.title`) }}
-            </h3>
-
-            <!-- DESCRIPTION -->
-            <p class="mt-5 max-w-2xl text-base leading-8 text-gray-600 sm:text-lg">
-              {{ t(`news.articles.${article.id}.description`) }}
-            </p>
-
-            <!-- READ FULL STORY -->
-            <button
-              type="button"
-              @click="openArticle(article)"
+            <p
               :class="[
-                siteTheme.components.button.base,
-                siteTheme.components.button.primary.background,
-                siteTheme.components.button.primary.hover,
-                'mt-7 rounded-full px-7 py-3.5 font-semibold shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md',
+                'text-xs font-bold tracking-[0.25em] uppercase',
+                siteTheme.colors.accent.text,
               ]"
             >
-              {{ t('news.buttons.featured') }}
-
-              <span class="ml-2">→</span>
-            </button>
+              {{ t('news.eyebrow') }}
+            </p>
           </div>
-        </article>
-      </div>
 
-      <!-- View All News -->
-      <div class="mt-14 text-center">
-        <BaseButton :text="t('news.buttons.text')" to="/news" :variant="'primary'" />
-      </div>
-    </div>
+          <h1
+            :class="[
+              'text-3xl leading-tight font-extrabold tracking-tight sm:text-4xl lg:text-5xl',
+              siteTheme.colors.text.primary,
+            ]"
+          >
+            {{ t('news.title') }}
+          </h1>
 
-    <!-- Modal -->
+          <p
+            :class="[
+              'mt-5 max-w-2xl text-base leading-8 sm:text-lg',
+              siteTheme.colors.text.secondary,
+            ]"
+          >
+            {{ t('news.description') }}
+          </p>
+        </div>
+
+        <!-- ================================================= -->
+        <!-- FEATURED ARTICLES                                  -->
+        <!-- ================================================= -->
+
+        <div class="mt-12 space-y-8 sm:mt-14 sm:space-y-10 lg:mt-16 lg:space-y-12">
+          <article
+            v-for="(article, index) in newsContent.articles"
+            :key="article.id"
+            class="group grid items-center gap-8 overflow-hidden rounded-[1.75rem] border border-slate-200/80 p-4 transition-all duration-500 hover:border-slate-300 hover:shadow-xl sm:p-6 lg:grid-cols-2 lg:gap-12 lg:p-8"
+          >
+            <!-- ================================================= -->
+            <!-- IMAGE                                               -->
+            <!-- ================================================= -->
+
+            <div
+              :class="[
+                'overflow-hidden rounded-2xl',
+                index % 2 !== 0 ? 'lg:order-2' : 'lg:order-1',
+              ]"
+            >
+              <div class="relative overflow-hidden rounded-2xl bg-slate-100">
+                <img
+                  :src="article.image"
+                  :alt="t(`news.articles.${article.translationKey}.title`)"
+                  class="h-[280px] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] sm:h-[340px] lg:h-[400px]"
+                />
+
+                <!-- Image overlay -->
+
+                <div
+                  class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                />
+              </div>
+            </div>
+
+            <!-- ================================================= -->
+            <!-- CONTENT                                             -->
+            <!-- ================================================= -->
+
+            <div
+              :class="[
+                index % 2 !== 0 ? 'lg:order-1' : 'lg:order-2',
+                'px-2 py-4 sm:px-4 sm:py-6 lg:px-6 lg:py-8',
+              ]"
+            >
+              <!-- Category -->
+
+              <div class="flex items-center gap-3">
+                <span :class="['h-px w-8', siteTheme.colors.accent.background]" />
+
+                <span
+                  :class="[
+                    'text-xs font-bold tracking-[0.18em] uppercase',
+                    siteTheme.colors.accent.text,
+                  ]"
+                >
+                  {{ t(`news.articles.${article.translationKey}.category`) }}
+                </span>
+              </div>
+
+              <!-- Date -->
+
+              <time :class="['mt-4 block text-sm font-medium', siteTheme.colors.text.muted]">
+                {{ t(`news.articles.${article.translationKey}.date`) }}
+              </time>
+
+              <!-- Title -->
+
+              <h2
+                :class="[
+                  'mt-4 max-w-2xl text-2xl leading-tight font-extrabold tracking-tight sm:text-3xl lg:text-4xl',
+                  siteTheme.colors.text.primary,
+                ]"
+              >
+                {{ t(`news.articles.${article.translationKey}.title`) }}
+              </h2>
+
+              <!-- Description -->
+
+              <p
+                :class="[
+                  'mt-5 max-w-2xl text-base leading-8 sm:text-lg',
+                  siteTheme.colors.text.secondary,
+                ]"
+              >
+                {{ t(`news.articles.${article.translationKey}.description`) }}
+              </p>
+
+              <!-- Location -->
+
+              <p :class="['mt-4 text-sm font-medium', siteTheme.colors.text.muted]">
+                {{ t(`news.articles.${article.translationKey}.location`) }}
+              </p>
+
+              <!-- Read Story -->
+
+              <button
+                type="button"
+                :class="[
+                  siteTheme.components.button.base,
+                  siteTheme.components.button.primary,
+                  'mt-7 rounded-full px-7 py-3.5 font-semibold transition-all duration-300 hover:-translate-y-0.5',
+                ]"
+                @click="openArticle(article)"
+              >
+                {{ t('news.buttons.readArticle') }}
+
+                <span
+                  class="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  →
+                </span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- ARTICLE MODAL                                         -->
+    <!-- ===================================================== -->
+
     <NewsModal :article="selectedArticle" @close="closeArticle" />
-  </section>
+  </main>
 </template>

@@ -12,95 +12,146 @@ useSeoMeta({
 </script>
 
 <template>
-  <div>
-    <section class="py-20 sm:py-24">
-      <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-          <div>
-            <p
-              class="text-sm font-semibold tracking-widest uppercase"
-              :class="siteTheme.colors.accent.text"
-            >
-              {{ t('manifesto.commitment.eyebrow') }}
-            </p>
+  <main
+    :class="['min-h-screen', siteTheme.colors.background.surface, siteTheme.colors.text.primary]"
+  >
+    <!-- ===================================================== -->
+    <!-- COMMITMENT                                            -->
+    <!-- ===================================================== -->
 
-            <h2
-              class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl"
-              :class="siteTheme.colors.text.primary"
+    <section class="pt-16 pb-20 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        <!-- Header -->
+        <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end lg:gap-16">
+          <div>
+            <div class="mb-5 flex items-center gap-4">
+              <span :class="['h-px w-10', siteTheme.colors.accent.background]" />
+
+              <p
+                :class="[
+                  'text-xs font-bold tracking-[0.25em] uppercase',
+                  siteTheme.colors.accent.text,
+                ]"
+              >
+                {{ t('manifesto.commitment.eyebrow') }}
+              </p>
+            </div>
+
+            <h1
+              :class="[
+                'max-w-xl text-3xl leading-tight font-extrabold tracking-tight sm:text-4xl lg:text-5xl',
+                siteTheme.colors.text.primary,
+              ]"
             >
               {{ t('manifesto.commitment.title') }}
-            </h2>
+            </h1>
           </div>
 
-          <p class="text-lg leading-8" :class="siteTheme.colors.text.secondary">
+          <p :class="['max-w-3xl text-base leading-8 sm:text-lg', siteTheme.colors.text.secondary]">
             {{ t('manifesto.commitment.introduction') }}
           </p>
         </div>
 
-        <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Priorities -->
+        <div class="mt-12 grid gap-5 md:grid-cols-2 lg:mt-14 lg:grid-cols-3 lg:gap-6">
           <article
             v-for="(priority, index) in manifestoContent.priorities"
             :key="priority.id"
-            :class="siteTheme.components.card.base"
+            :class="[siteTheme.components.card.base, 'group relative overflow-hidden']"
           >
-            <p class="text-sm font-bold tracking-widest" :class="siteTheme.colors.accent.text">
+            <!-- Number -->
+            <div :class="['text-xs font-bold tracking-[0.2em]', siteTheme.colors.accent.text]">
               {{ String(index + 1).padStart(2, '0') }}
-            </p>
+            </div>
 
-            <h3 class="mt-4 text-xl font-bold" :class="siteTheme.colors.text.primary">
+            <!-- Content -->
+            <h2 :class="['mt-4 text-xl leading-tight font-bold', siteTheme.colors.text.primary]">
               {{ t(`manifesto.priorities.${priority.id}.title`) }}
-            </h3>
+            </h2>
 
-            <p class="mt-3 leading-7" :class="siteTheme.colors.text.secondary">
+            <p :class="['mt-3 text-sm leading-7', siteTheme.colors.text.secondary]">
               {{ t(`manifesto.priorities.${priority.id}.description`) }}
             </p>
+
+            <!-- Bottom accent -->
+            <span
+              :class="[
+                'absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-500 group-hover:w-full',
+                siteTheme.colors.accent.background,
+              ]"
+            />
           </article>
         </div>
       </div>
     </section>
 
-    <section :class="['py-20 sm:py-24', siteTheme.colors.background.surface]">
-      <div class="mx-auto max-w-4xl px-6 text-center lg:px-8">
-        <p
-          class="text-sm font-semibold tracking-widest uppercase"
-          :class="siteTheme.colors.accent.text"
-        >
-          {{ t('manifesto.participation.eyebrow') }}
-        </p>
+    <!-- ===================================================== -->
+    <!-- PARTICIPATION                                         -->
+    <!-- ===================================================== -->
 
-        <h2
-          class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl"
-          :class="siteTheme.colors.text.primary"
+    <section class="pb-20 sm:pb-24 lg:pb-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        <div
+          class="relative overflow-hidden rounded-[1.75rem] border border-slate-200 px-6 py-12 sm:px-10 sm:py-14 lg:px-16 lg:py-16"
         >
-          {{ t('manifesto.participation.title') }}
-        </h2>
+          <!-- Ambient Accent -->
+          <div
+            :class="[
+              'pointer-events-none absolute -right-32 -bottom-32 h-80 w-80 rounded-full opacity-[0.06] blur-3xl',
+              siteTheme.colors.accent.background,
+            ]"
+          />
 
-        <p
-          class="mx-auto mt-5 max-w-2xl text-lg leading-8"
-          :class="siteTheme.colors.text.secondary"
-        >
-          {{ t('manifesto.participation.description') }}
-        </p>
+          <div class="relative z-10 mx-auto max-w-3xl text-center">
+            <p
+              :class="[
+                'text-xs font-bold tracking-[0.25em] uppercase',
+                siteTheme.colors.accent.text,
+              ]"
+            >
+              {{ t('manifesto.participation.eyebrow') }}
+            </p>
 
-        <a
-          v-if="manifestoContent.document.path"
-          :href="manifestoContent.document.path"
-          class="mt-8 inline-flex"
-          :class="[siteTheme.components.button.base, siteTheme.components.button.primary]"
-          download
-        >
-          {{ t('manifesto.participation.download') }}
-        </a>
+            <h2
+              :class="[
+                'mt-4 text-3xl leading-tight font-extrabold tracking-tight sm:text-4xl lg:text-5xl',
+                siteTheme.colors.text.primary,
+              ]"
+            >
+              {{ t('manifesto.participation.title') }}
+            </h2>
 
-        <NuxtLink
-          v-else
-          to="/contact"
-          class="mt-8 inline-flex"
-          :class="[siteTheme.components.button.base, siteTheme.components.button.primary]"
-        >
-          {{ t('manifesto.participation.share') }}
-        </NuxtLink>
+            <p
+              :class="[
+                'mx-auto mt-5 max-w-2xl text-base leading-8 sm:text-lg',
+                siteTheme.colors.text.secondary,
+              ]"
+            >
+              {{ t('manifesto.participation.description') }}
+            </p>
+
+            <!-- Action -->
+            <div class="mt-8 flex justify-center">
+              <a
+                v-if="manifestoContent.document.path"
+                :href="manifestoContent.document.path"
+                download
+                :class="[siteTheme.components.button.base, siteTheme.components.button.primary]"
+              >
+                {{ t('manifesto.participation.download') }}
+              </a>
+
+              <NuxtLink
+                v-else
+                to="/contact"
+                :class="[siteTheme.components.button.base, siteTheme.components.button.primary]"
+              >
+                {{ t('manifesto.participation.share') }}
+              </NuxtLink>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-  </div>
+  </main>
 </template>

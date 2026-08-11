@@ -7,17 +7,17 @@ const props = withDefaults(
   defineProps<{
     text: string;
     to?: string;
-    variant?: ButtonVariant; // 'primary' | 'secondary' | 'outline'
+    variant?: ButtonVariant;
   }>(),
   {
     variant: 'primary',
   },
 );
 
-// Dynamically grab the correct variant string from our simplified theme config
-const buttonClasses = computed(() => {
-  return [siteTheme.components.button.base, siteTheme.components.button[props.variant]];
-});
+const buttonClasses = computed(() => [
+  siteTheme.components.button.base,
+  siteTheme.components.button[props.variant],
+]);
 </script>
 
 <template>
@@ -26,11 +26,18 @@ const buttonClasses = computed(() => {
     :to="to"
     class="inline-flex items-center justify-center"
     :class="buttonClasses"
+    v-bind="$attrs"
   >
     {{ text }}
   </NuxtLink>
 
-  <button v-else class="inline-flex items-center justify-center" :class="buttonClasses">
+  <button
+    v-else
+    type="button"
+    class="inline-flex items-center justify-center"
+    :class="buttonClasses"
+    v-bind="$attrs"
+  >
     {{ text }}
   </button>
 </template>

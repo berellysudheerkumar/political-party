@@ -13,12 +13,10 @@ import GallerySection from '~/components/home/GallerySection.vue';
 <template>
   <div>
     <HeroSection />
-    <!-- <VisionMissionSection /> -->
     <AboutSection />
     <NewsSection />
     <EventsSection />
     <AchievementsSection />
-    <LeadershipSection />
     <GallerySection />
   </div>
 </template>

@@ -85,13 +85,11 @@ const scroll = (direction: 'left' | 'right') => {
           ref="carouselRef"
           class="hide-scrollbar flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth"
         >
-          <!-- Card Wrapper set to w-full to take up 100% of the container width -->
           <div
-            v-for="article in newsContent?.articles"
+            v-for="article in newsContent.articles"
             :key="article.id"
-            class="w-full shrink-0 snap-center transition-transform duration-300"
+            class="w-full min-w-full shrink-0 snap-center"
           >
-            <!-- Your existing card component -->
             <NewsCard :article="article" />
           </div>
         </div>

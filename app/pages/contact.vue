@@ -77,7 +77,7 @@ const { t } = useI18n();
               href="#connect"
               :class="[
                 siteTheme.components.button.base,
-                siteTheme.components.button.outline,
+                siteTheme.components.button.primary,
                 'inline-flex items-center justify-center rounded-full px-8 py-4',
               ]"
             >

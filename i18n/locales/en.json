@@ -42,6 +42,34 @@
     "description": "We are a political party committed to serving the people, strengthening communities, and creating meaningful opportunities for every citizen through responsible and inclusive governance.",
 
     "whatDrivesUs": "What Drives Us",
+    "foundationalVision": {
+      "eyebrow": "JAC Origin & Ideology",
+      "title": "The Ideals of Great Leaders Are Our Foundation",
+      "description": "Advancing the ideals of great leaders of the Bahujan movement in Telangana and rebuilding the spirit of historic struggles for self-respect and political power form the foundational vision of the JAC.",
+
+      "points": [
+        {
+          "id": "greatThinkers",
+          "title": "Ideals of Great Leaders",
+          "description": "Advancing the ideals of great leaders of the Bahujan movement, including Buddha, Dr. B. R. Ambedkar, Mahatma Jyotirao Phule, Shahu Maharaj, Kanshi Ram and others, across Telangana."
+        },
+        {
+          "id": "selfRespect",
+          "title": "Self-Respect & Political Power",
+          "description": "Rebuilding the banner of self-respect and political power inspired by Sammakka-Saralamma, Sarvai Papanna, Pandaga Sayanna and Konda Laxman Bapuji."
+        },
+        {
+          "id": "socialJustice",
+          "title": "Political Power for the 90%",
+          "description": "Working towards making political power achievable for the BC, SC, ST and minority communities that constitute 90% of Telangana's population."
+        },
+        {
+          "id": "politicalResistance",
+          "title": "Resistance to Political Conspiracies",
+          "description": "Countering what the JAC identifies as political conspiracies by upper-caste feudal capitalists and the earlier JAC of 2009."
+        }
+      ]
+    },
     "driveText1": "A people-centred commitment to progress",
     "driveText2": "We believe lasting progress begins by listening to citizens, understanding the needs of every community, and turning those aspirations into responsible action. Our commitment is to work with integrity, accountability, and a clear focus on the public good.",
 
@@ -84,69 +112,99 @@
     "button": {
       "text": "Learn More",
       "link": "/about"
+    },
+    "timeline": {
+      "eyebrow": "ONE YEAR & THREE MONTHS OF STRUGGLE",
+      "title": "A Journey of Struggle for the People",
+      "description": "Key milestones from April 2025 to May 2026 in the movement for people's rights, land, reservations, representation, and social justice.",
+
+      "events": {
+        "april2025": {
+          "date": "April 2025",
+          "title": "Ma Bhoomi Rathayatra Begins in Adilabad",
+          "description": "On 14 April 2025, the 100,000-kilometre 'Ma Bhoomi Rathayatra' was launched in Adilabad. It marked the beginning of a long-term people's movement across Telangana for land rights, self-respect, and people's rights."
+        },
+
+        "november2025": {
+          "date": "November 2025",
+          "title": "Dharmadeeksha & Aakrosha Sabha for 42% BC Reservations",
+          "description": "A Dharmadeeksha was held at Osmania University demanding 42% reservations for BC communities. This was followed by an Aakrosha Sabha in Kamareddy, strengthening the demand for social justice and equal representation."
+        },
+
+        "februaryMarch2026": {
+          "date": "February – March 2026",
+          "title": "Legal Fight for Kummera Victims & Khammam Bhoodan Land Struggle",
+          "description": "The movement continued its legal fight for the affected people of Kummera while strengthening the struggle for Bhoodan lands in Khammam. The campaign remained focused on land rights and justice for affected families."
+        },
+
+        "may2026": {
+          "date": "May 2026",
+          "title": "'Share According to Population' Public Meetings",
+          "description": "Public meetings were held around the call, 'Share according to the population of each community', highlighting the demand for proportional representation, social justice, and political empowerment."
+        }
+      }
     }
   },
   "news": {
-    "eyebrow": "News & Updates",
-    "title": "Latest From Our Movement",
-    "description": "Stay informed about our public initiatives, community programs, local engagements, and ongoing efforts to work for the people and create meaningful change.",
-
-    "buttons": {
-      "featured": "Read Full Story",
-      "card": "Read More",
-      "close": "Close Article",
-      "text": "View All News",
-      "link": "/news"
-    },
+    "eyebrow": "OUR WORK",
+    "title": "Our Struggle for the People",
+    "description": "The JAC continues to stand with the people in the fight for land rights, dignity of labour, employment, and justice for farming communities.",
 
     "articles": {
-      "publicServiceCenters": {
-        "category": "Public Service",
-        "title": "New Public Service Centers Launched Across Constituencies",
-        "date": "August 7, 2026",
-        "description": "New public service centers are being established to help citizens access information, guidance, and support for essential services.",
-        "content": "The new public service centers are designed to make essential information and support more accessible to citizens. The initiative focuses on listening to public needs, improving access to services, and helping communities connect with the assistance they require."
+      "maBhoomiRathayatra": {
+        "category": "MA BHUMI RATHAYATRA",
+        "title": "A 100,000-Kilometre Ma Bhoomi Rathayatra",
+        "description": "Launched on 14 April 2025 from Adilabad, the Ma Bhoomi Rathayatra is a long-term people's movement across Telangana, continuing for three years and three months in the pursuit of land rights, self-respect, and political empowerment.",
+        "date": "14 April 2025",
+        "location": "Adilabad"
       },
 
-      "communityMeetings": {
-        "category": "Public Outreach",
-        "title": "Listening to Citizens Through Local Community Meetings",
-        "date": "July 28, 2026",
-        "description": "Local community meetings are bringing citizens and representatives together to understand concerns, priorities, and development needs.",
-        "content": "Community meetings provide an opportunity for residents to openly share their concerns and ideas. Our representatives are engaging directly with citizens to better understand local priorities and work towards responsible and practical solutions."
-      },
-
-      "youthLeadership": {
-        "category": "Youth Development",
-        "title": "Youth Leadership Program Encourages Community Participation",
-        "date": "July 15, 2026",
-        "description": "A youth leadership initiative is encouraging young people to take an active role in community development and public participation.",
-        "content": "Young people have an important role to play in shaping the future of their communities. This initiative aims to encourage leadership, civic participation, and constructive engagement among the next generation."
-      },
-
-      "greenDrive": {
-        "category": "Environment",
-        "title": "Community Green Drive Promotes Sustainable Living",
-        "date": "June 30, 2026",
-        "description": "Citizens and volunteers came together for environmental awareness activities promoting cleaner and more sustainable communities.",
-        "content": "The community green drive brought volunteers and residents together to raise awareness about environmental responsibility. The initiative encourages communities to adopt sustainable practices and take collective responsibility for protecting our surroundings."
+      "velugumatlabhoodanland": {
+        "category": "LAND STRUGGLE",
+        "title": "Justice for Velugumatla Bhoodan Land Families",
+        "description": "The JAC stood with more than 700 homeless families seeking justice over the Bhoodan lands at Velugumatla in Khammam. The movement played a key role in securing a High Court status quo order in support of the affected families.",
+        "date": "People's Movement",
+        "location": "Khammam"
       },
 
       "volunteerNetwork": {
-        "category": "Community Initiative",
-        "title": "Volunteer Network Expands Across Regions",
-        "date": "June 18, 2026",
-        "description": "Our volunteer network continues to grow, bringing more citizens together to support community-focused initiatives and public programs.",
-        "content": "The growing volunteer network reflects the strength of community participation. Volunteers are contributing their time and skills to support local initiatives and strengthen connections between citizens and community programs."
+        "category": "LAND RIGHTS",
+        "title": "Standing With Industrial Land Victims",
+        "description": "The JAC stood with families affected by industrial land acquisition in Kadlapur and Rapole in Parigi. Through protests, dharnas, arrests, and sustained public pressure, the movement continued the fight for justice and ultimately achieved a significant victory.",
+        "date": "People's Movement",
+        "location": "Parigi"
+      },
+
+      "farmersfamilies": {
+        "category": "LAND RIGHTS",
+        "title": "Standing With Nadergul & RRR Land Victims",
+        "description": "The JAC brought the concerns of land-affected families in Nadergul and along the Regional Ring Road to the authorities. A representation was submitted to the Governor on behalf of the affected families as the struggle for justice continues.",
+        "date": "Representation to the Governor",
+        "location": "Nadergul & RRR"
+      },
+
+      "workersUnemployed": {
+        "category": "WORKERS & EMPLOYMENT",
+        "title": "For the Dignity of Labour and Workers' Rights",
+        "description": "The JAC has stood with hamalis in Ichoda, Civil Supplies workers, sanitation workers, and other working communities. Advancing the principle of 'Dignity of Labour', the movement has also supported RTC employees and the demand for a corporation for outsourcing workers.",
+        "date": "Workers' Rights",
+        "location": "Telangana"
       },
 
       "developmentPriorities": {
-        "category": "Public Meeting",
-        "title": "District-Level Discussion on Development Priorities",
-        "date": "June 5, 2026",
-        "description": "Citizens and community representatives came together to discuss local development priorities and important issues affecting their communities.",
-        "content": "The district-level discussion created a platform for citizens to share their views on development priorities and local concerns. The feedback gathered from these discussions will help inform our understanding of community needs and priorities."
+        "category": "FARMERS",
+        "title": "Standing With Bereaved Farmer Families",
+        "description": "The JAC visited and stood by the families of Kode Govind and Kummari Lingaiah, who died by suicide amid the lack of remunerative prices, and Ugge Hanumanth, who died from an electric shock. Supporting affected farming families in their time of grief remains a responsibility of the movement.",
+        "date": "Farmer Family Outreach",
+        "location": "Telangana"
       }
+    },
+
+    "buttons": {
+      "readArticle": "Read Full Article",
+      "text": "View All Our Work",
+      "card": "read more",
+      "link": "/news"
     }
   },
   "events": {
@@ -378,7 +436,7 @@
       "email": {
         "label": "WRITE",
         "title": "Send Us an Email",
-        "value": "info@exampleparty.org"
+        "value": "info{'@'}exampleparty.org"
       },
       "hours": {
         "label": "HOURS",

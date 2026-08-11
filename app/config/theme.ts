@@ -67,6 +67,17 @@ export const siteTheme = {
       primary: `${tokens.primary.bg} ${tokens.primary.hover} text-white`,
       secondary: `${tokens.dark.bg} ${tokens.dark.hover} text-white`,
       outline: `bg-transparent border ${tokens.dark.border} ${tokens.dark.text} ${tokens.dark.hover} hover:text-white`,
+      language: [
+        'border',
+        'border-slate-300',
+        'bg-white',
+        'text-slate-800',
+        'hover:border-slate-400',
+        'hover:bg-slate-50',
+        'dark:border-slate-600',
+        'dark:bg-slate-900',
+        'dark:text-white',
+      ].join(' '),
     },
 
     // Grouped layout sections to reduce repetition

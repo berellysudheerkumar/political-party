@@ -6,7 +6,28 @@ export const aboutContent = {
   description:
     'We are committed to creating inclusive growth through transparency, development, and people-centric initiatives that improve the lives of every citizen.',
 
-  image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac',
+  image: '/images/gallery/image28-85.jpeg',
+
+  foundationalVision: {
+    points: [
+      {
+        id: 'greatThinkers',
+        image: '/images/gallery/image44-117.png',
+      },
+      {
+        id: 'selfRespect',
+        image: '/images/gallery/visharadan-rally-bg.jpeg',
+      },
+      {
+        id: 'socialJustice',
+        image: '/images/gallery/visharadan-rally-bg.jpeg',
+      },
+      {
+        id: 'politicalResistance',
+        image: '/images/gallery/visharadan-rally-bg.jpeg',
+      },
+    ],
+  },
 
   highlights: [
     {
